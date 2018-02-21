@@ -6,7 +6,7 @@ var API = (function() {
             type    : 'GET',
             url     : baseUrl + 'books/',
             dataType: 'json',
-            async   : false,
+            async   : true,
             timeout : 10000
         });
     }
@@ -16,7 +16,7 @@ var API = (function() {
             type    : 'GET',
             url     : baseUrl + 'books/count/unread/',
             dataType: 'json',
-            async   : false,
+            async   : true,
             timeout : 10000
         });
     }
@@ -26,7 +26,7 @@ var API = (function() {
             type    : 'GET',
             url     : baseUrl + 'books/count/unread/',
             dataType: 'json',
-            async   : false,
+            async   : true,
             timeout : 10000
         });
     }
@@ -36,7 +36,18 @@ var API = (function() {
             type    : 'GET',
             url     : baseUrl + 'books/count/finished/',
             dataType: 'json',
-            async   : false,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    function registerBook(requestData) {
+        return $.ajax({
+            type    : 'POST',
+            url     : baseUrl + 'book/',
+            dataType: 'json',
+            data    : requestData,
+            async   : true,
             timeout : 10000
         });
     }
@@ -44,7 +55,8 @@ var API = (function() {
         books             : getBooks,
         booksCountUnread  : getBooksCountUnread,
         booksCountReading : getBooksCountReading,
-        booksCountFinished: getBooksCountFinished
+        booksCountFinished: getBooksCountFinished,
+        book              : registerBook
 
     };
 })();
