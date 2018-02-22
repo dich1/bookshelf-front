@@ -87,6 +87,7 @@ header nav a {
 /* カーソルをリンクポインタにする */
 .book_status input {
   cursor: pointer;
+  background-color: #ddd;
 }
 /* アクティブ時とホバー時の色を指定*/
 .unread.active input,
