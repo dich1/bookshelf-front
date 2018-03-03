@@ -18,18 +18,18 @@
     </header>
     <div id="cover">
       <h1 id="cover_title">ほんだな</h1>
-      <form action="index.html" method="post">
+      <form action="">
         <div class="book_status unread active">
-          <input type="submit" name="submit_only_unread" value="未読">
-          <div class="book_count"></div>
+          <input type="button" name="submit_only_unread" value="未読">
+          <div id= "books_unread" class="book_count"></div>
         </div>
         <div class="book_status reading active">
-          <input type="submit" name="submit_only_reading" value="読書中">
-          <div class="book_count"></div>
+          <input type="button" name="submit_only_reading" value="読書中">
+          <div id= "books_reading" class="book_count"></div>
         </div>
         <div class="book_status finished active">
-          <input type="submit" name="submit_only_finished" value="既読">
-          <div class="book_count"></div>
+          <input type="button" name="submit_only_finished" value="既読">
+          <div id= "books_finished" class="book_count"></div>
         </div>
       </form>
     </div>
@@ -37,34 +37,6 @@
       <div id="main">
         <div id="book_list" class="clearfix">
           <!-- 登録された書籍タイトルの数だけ出力  -->
-          <!-- class="book_item" -->
-          <div class="book_item">
-            <div class="book_image">
-              <!-- 画像 -->
-              <img src="" alt="">
-            </div>
-            <div class="book_detail">
-              <div class="book_title">
-                <!-- タイトル -->
-              </div>
-              <form action="index.html" method="post">
-                <div class="book_status unread">
-                  <input type="submit" name="submit_book_unread" value="未読">
-                </div>
-                <div class="book_status reading">
-                  <input type="submit" name="submit_book_reading" value="読書中">
-                </div>
-                <div class="book_status finished">
-                  <input type="submit" name="submit_book_finished" value="既読">
-                </div>
-              </form>
-              <form action="index.html" method="post">
-                <div class="book_delete">
-                  <input type="submit" name="submit_book_delete" value="削除する"><img src="../public/images/icon_trash.png" alt="icon trash">
-                </div>
-              </form>
-            </div>
-          </div>
         </div>
       </div>
     </div>
