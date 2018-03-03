@@ -6,7 +6,7 @@ var API = (function() {
             type    : 'GET',
             url     : baseUrl + 'books/',
             dataType: 'json',
-            async   : true,
+            async   : false,
             timeout : 10000
         });
     }
@@ -24,7 +24,7 @@ var API = (function() {
     function getBooksCountReading() {
         return $.ajax({
             type    : 'GET',
-            url     : baseUrl + 'books/count/unread/',
+            url     : baseUrl + 'books/count/reading/',
             dataType: 'json',
             async   : true,
             timeout : 10000
@@ -41,22 +41,82 @@ var API = (function() {
         });
     }
 
-    function registerBook(requestData) {
+    function registerBook(request) {
         return $.ajax({
             type    : 'POST',
             url     : baseUrl + 'book/',
             dataType: 'json',
-            data    : requestData,
+            data    : request,
             async   : true,
             timeout : 10000
         });
     }
-    return {
-        books             : getBooks,
-        booksCountUnread  : getBooksCountUnread,
-        booksCountReading : getBooksCountReading,
-        booksCountFinished: getBooksCountFinished,
-        book              : registerBook
 
+    function updateBook(request) {
+        return $.ajax({
+            type    : 'PUT',
+            url     : baseUrl + 'book/',
+            dataType: 'json',
+            data    : request,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    function updateBookUnread(request) {
+        return $.ajax({
+            type    : 'PUT',
+            url     : baseUrl + 'book/unread/',
+            dataType: 'json',
+            data    : request,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    function updateBookReading(request) {
+        return $.ajax({
+            type    : 'PUT',
+            url     : baseUrl + 'book/reading/',
+            dataType: 'json',
+            data    : request,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    function updateBookFinished(request) {
+        return $.ajax({
+            type    : 'PUT',
+            url     : baseUrl + 'book/finished/',
+            dataType: 'json',
+            data    : request,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    function deleteBook(request) {
+        return $.ajax({
+            type    : 'DELETE',
+            url     : baseUrl + 'book/',
+            dataType: 'json',
+            data    : request,
+            async   : true,
+            timeout : 10000
+        });
+    }
+
+    return {
+        getBooks             : getBooks,
+        getBooksCountUnread  : getBooksCountUnread,
+        getBooksCountReading : getBooksCountReading,
+        getBooksCountFinished: getBooksCountFinished,
+        registerBook         : registerBook,
+        updateBook           : updateBook,
+        updateBookUnread     : updateBookUnread,
+        updateBookReading    : updateBookReading,
+        updateBookFinished   : updateBookFinished,
+        deleteBook           : deleteBook
     };
 })();
