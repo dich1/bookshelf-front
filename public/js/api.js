@@ -43,12 +43,14 @@ var API = (function() {
 
     function registerBook(request) {
         return $.ajax({
-            type    : 'POST',
-            url     : baseUrl + 'book/',
-            dataType: 'json',
-            data    : request,
-            async   : true,
-            timeout : 10000
+            type       : 'POST',
+            url        : baseUrl + 'book/',
+            dataType   : 'json',
+            data       : request,
+            async      : true,
+            timeout    : 10000,
+            processData: false,
+            contentType: false
         });
     }
 
