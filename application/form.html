@@ -20,13 +20,13 @@
       <div id="main">
         <form name="register_book" action="" class="form_book" enctype="multipart/form-data">
           <div class="book_title">
-            <input type="text" name="book_title" placeholder="書籍タイトルを入力" required>
+            <input type="text" name="book_title" placeholder="書籍タイトルを入力" value="" required>
           </div>
           <div class="book_image">
-            <input type="file" name="book_image">
+            <input type="file" name="book_image" accept="image/png,image/jpeg,image/gif">
           </div>
           <div class="book_submit">
-            <input type="button" name="submit_add_book" value="登録" onclick="registerBook();">
+            <input type="button" name="submit_add_book" value="登録" onclick="registerBook(this);">
           </div>
         </form>
       </div>
@@ -34,5 +34,8 @@
     <footer>
       <small>© 2018 Bookshelf.</small>
     </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="../public/js/api.js"></script>
+    <script type="text/javascript" src="../public/js/display.js"></script>
   </body>
 </html>
